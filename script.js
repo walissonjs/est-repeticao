@@ -2,14 +2,42 @@
 // 1) Desenvolver um algoritmo que efetue a soma de todos os números ímpares que são múltiplos de três e que se encontram no conjunto dos números de 1 até 500.
 
 function somaImpares() {
-    let soma = 0;
+// RESOLUÇÃO PROFESSOR CARLOS:
+// let soma = 0;
+//    for (let i = 1; i <= 500; i++) {
+//        if (i % 2 !== 0 && i % 3 === 0) {
+//            soma += i;
+//        }
+//    }
+//    alert("A soma dos ímpares e múltiplos de 3 no conjunto de 1 à 500 é: " + soma);
 
-    for (let i = 1; i <= 500; i++) {
-        if (i % 2 !== 0 && i % 3 === 0) {
-            soma += i;
-        }
-    }
-    alert("A soma dos ímpares e múltiplos de 3 no conjunto de 1 à 500 é: " + soma);
+// OUTRA FORMA (MAIS SIMPLES)
+let soma = 0;
+    
+for (let i = 3; i <= 500; i += 6) {
+    soma += i; // acumula
+}
+alert(`A soma dos números ímpares e multiplos de 3 é:\n-----------------------------------------------------\n • Soma total: ${soma}`);
+
+
+// ======= Regra aritmética: an = a1 +(n−1) * r
+// an = último termo
+// a1 = primeiro termo
+// n = índice = n = (an-a1)/r + 1 (encontrar o índice)
+// r = razão da progressão aritmética:
+// Início 3, último: 500, razão 6. 
+// Começa em 3 e vai pulando de 6 em 6
+
+// Progressão aritmética: primeiro termo = 3, razão = 6, último termo <= 500
+// const primeiro = 3;
+// const razao = 6;
+// const ultimo = 3 + Math.floor((500 - 3) / razao) * razao;
+// const n = ((ultimo - primeiro) / razao) + 1;
+
+// Soma = n/2 * (primeiro + ultimo)
+// const soma = n / 2 * (primeiro + ultimo);
+
+// console.log(`A soma dos ímpares múltiplos de 3 de 1 a 500 é: ${soma}`);
 }
 
 // 2) Desenvolver um algoritmo que leia a altura de 15 pessoas. Este programa deverá calcular e mostrar:
